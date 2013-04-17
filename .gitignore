@@ -1,0 +1,4 @@
+.htaccess
+includes/config.php
+*/error.log
+*.DS_Store
