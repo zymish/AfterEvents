@@ -1,5 +1,7 @@
 <div class="dash_head">
-    <p>Tell everyone about your project. This is the place to include a quick overview to get people excited about what you're planning!</p>
+    <p>Tell everyone about your project. This is the place to include a quick overview to get people excited about what you're planning!
+	<br><br>
+	You can include lists and even images.</p>
 	<p>You can supply whatever background image you like.</p>
 </div>
 <div class="dash_bottom">
