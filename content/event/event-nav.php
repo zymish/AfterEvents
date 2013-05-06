@@ -37,9 +37,9 @@
             <li class="<?= (substr($site['page'][PAGE_INDEX],0,11) == "event/guest")?"active":""?>"><a href='<?= SITE_ROOT ?>event.guests/<?= $projectID ?>/<?= $eventID ?>'>
             	Guests</a></li>
         <?php endif; ?>
-        <?php if(checkPermission(array($projectID,'events',$eventID,'hospitality','view'))): ?>
-            <li class="<?= (substr($site['page'][PAGE_INDEX],0,17) == "event/hospitality")?"active":""?>"><a href='<?= SITE_ROOT ?>event.hospitality/<?= $projectID ?>/<?= $eventID ?>'>
-            	Hospitality</a></li>
+        <?php if(checkPermission(array($projectID,'events',$eventID,'addons','view'))): ?>
+            <li class="<?= (substr($site['page'][PAGE_INDEX],0,17) == "event/addons")?"active":""?>"><a href='<?= SITE_ROOT ?>event.addons/<?= $projectID ?>/<?= $eventID ?>'>
+            	Addons</a></li>
         <?php endif; ?>
         <?php if(checkPermission(array($projectID,'events',$eventID,'messages','view'))): ?>
             <li class="<?= (substr($site['page'][PAGE_INDEX],0,13) == "event/message")?"active":""?>"><a href='<?= SITE_ROOT ?>event.messages/<?= $projectID ?>/<?= $eventID ?>'>

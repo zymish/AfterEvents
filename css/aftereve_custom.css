@@ -24,9 +24,6 @@ body {
     display: block;
     border-bottom: none;
 }
-#sidebar i {
-    color: #ff004e;
-}
 #content {
     border: none;
 }

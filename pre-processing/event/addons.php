@@ -19,21 +19,21 @@ if(isset($_POST,$_POST['action'],$_POST['eventID']))
 			'slug'			=> strtolower(str_replace(array(' ','_','-','"',"'",'\\','/',''),'',$_POST['name'])),
 			'eventID'		=> $eventID
 		);
-			if($ticketManager->newAddonType($data)) $errors[] = array('type'=>'success','icon'=>'icon-film','msg'=>'Hospitality type successfully created.');
+			if($ticketManager->newAddonType($data)) $errors[] = array('type'=>'success','icon'=>'icon-film','msg'=>'Addons type successfully created.');
 			else $errors[] = array('type'=>'error','icon'=>'icon-hdd','msg'=>'There was a database error.');
 	}
 	
 	if(in_array($_POST['action'],array('add','remove')))
 	{
-		if(!checkPermission(array($projectID,'events',$eventID,'hospitality','assign')))
-				$errors[] = array('type'=>'error','icon'=>'icon-lock','msg'=>'You do not have permission to edit hospitality for this event.');
+		if(!checkPermission(array($projectID,'events',$eventID,'addons','assign')))
+				$errors[] = array('type'=>'error','icon'=>'icon-lock','msg'=>'You do not have permission to edit addons for this event.');
 		else if(!empty($_POST['staffID']))
 		{
 			$sql  = "SELECT `staffInfo` FROM `eventStaff` WHERE `uid` = '".$_POST['staffID']."' LIMIT 1";
 			$result = $db->query($sql);
 			
 			if(!$result || $result->num_rows != 1)
-				$errors[] = array('type'=>'error','icon'=>'icon-exclamation-sign','msg'=>'Could not find contact to add hospitality');
+				$errors[] = array('type'=>'error','icon'=>'icon-exclamation-sign','msg'=>'Could not find contact to add addons');
 			else
 			{
 				$user = $result->fetch_assoc();
@@ -60,9 +60,9 @@ if(isset($_POST,$_POST['action'],$_POST['eventID']))
 	}
 }
 
-// hospitality request form processing BEGIN
+// addons request form processing BEGIN
 if(intval($_POST['quantity']) > 0 && !empty($_POST['business_unit'])) {
-	$sql = "SELECT `subject`,`body`,`images` FROM `messagesTemplates` WHERE `projectID` = '".$projectID."' AND `msgType` = 'hospitalityRequest' LIMIT 1";
+	$sql = "SELECT `subject`,`body`,`images` FROM `messagesTemplates` WHERE `projectID` = '".$projectID."' AND `msgType` = 'addonsRequest' LIMIT 1";
 	$result = $db->query($sql);
 	$template = $result->fetch_assoc();
 	if($template)
@@ -89,7 +89,7 @@ if(intval($_POST['quantity']) > 0 && !empty($_POST['business_unit'])) {
 		
 		if($messageManager->send_email("Stephanie Edmondson", "stephanie.edmondson@ncompassonline.com", $subject, $body,$template['images']))
 		{
-			$errors[] = array('type'=>'success','icon'=>'icon-beer','msg'=>'Your hospitality request has been successfully submitted.');
+			$errors[] = array('type'=>'success','icon'=>'icon-beer','msg'=>'Your addons request has been successfully submitted.');
 			if($messageManager->send_email($_SESSION['user']['name'], $_SESSION['user']['email'], $subject, $body,$template['images']))
 				$errors[] = array('type'=>'success','icon'=>'icon-envelope','msg'=>"A copy of this request has also been sent to: ".$_SESSION['user']['email']);
 		}else $errors[] = array('type'=>'error','icon'=>'icon-hdd','msg'=>'There was an issue submitting your request. Please try again.');
@@ -100,7 +100,7 @@ if(intval($_POST['quantity']) > 0 && !empty($_POST['business_unit'])) {
 $addons = $ticketManager->getAddons($eventID);
 if(!$addons || sizeof($addons) == 0)
 {
-	$data = array('eventID' => $eventID,'name'=>'Hospitality','description'=>'Shared Hospitality');
+	$data = array('eventID' => $eventID,'name'=>'Addons','description'=>'Shared Addons');
 	$ticketManager->NewAddonType($data);
 	
 	$addons = $ticketManager->getAddons($eventID);
@@ -108,4 +108,4 @@ if(!$addons || sizeof($addons) == 0)
 
 $staff = $staffManager->getEventStaffByGroup($eventID);
 
-$site['pageTitle'] = date("n/j",strtotime($event['start'])) . " " . $event['title'] . ' - Hospitality';
+$site['pageTitle'] = date("n/j",strtotime($event['start'])) . " " . $event['title'] . ' - Addons';
