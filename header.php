@@ -17,7 +17,7 @@
 
 		<script src="<?= SITE_ROOT ?>js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="<?= SITE_ROOT ?>js/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="<?= SITE_ROOT ?>css/bbak_custom.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="<?= SITE_ROOT ?>css/aftereve_custom.css">
 	</head>
     <body>
     <?php 
@@ -28,7 +28,7 @@
 	}
 	?>
     <div id="header">
-			<h1><a href="<?= SITE_ROOT ?>">BlackBerry</a></h1>		
+			<h1><a href="<?= SITE_ROOT ?>">AfterEvents</a></h1>		
 		</div>
 		
 		<div id="user-nav" class="navbar navbar-inverse">
@@ -75,12 +75,11 @@
 						<a href='<?= SITE_ROOT ?>project.reporting/<?= $projectID ?>'><i class='icon icon-bar-chart'></i><span>REPORTING</span></a>
 					</li>
                 <?php endif; ?>
-                	<li class="text-center sidebar_ak"><img src="<?=SITE_ROOT?>img/ak_sidebar_logo.png" /></li>
 				</ul>
 		</div>
         <div id="content">
         	<div id="content-header">
-				<h1><?= (isset($site['pageTitle']) && !empty($site['pageTitle']))?$site['pageTitle']:'BlackBerry Alicia Keys Tour'; ?></h1>
+				<h1><?= (isset($site['pageTitle']) && !empty($site['pageTitle']))?$site['pageTitle']:'Afterevents Admin Panel'; ?></h1>
 			</div>
 			<div class="container-fluid">
             <?php if(is_array($errors)) foreach($errors as $error): ?>

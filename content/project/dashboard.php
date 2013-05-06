@@ -1,9 +1,6 @@
 <div class="dash_head">
-    <p>
-        From Seattle to Sydney, BlackBerry is bringing the show stopping talents of Creative Director and Grammy Award Winning singer songwriter Alicia Keys to the most exciting cities around the world, as she takes stage across 5 continents throughout 2013.
-        <br /><br />
-        We can’t wait for you to be part of the experience and join us on the road!
-    </p>
+    <p>Tell everyone about your project. This is the place to include a quick overview to get people excited about what you're planning!</p>
+	<p>You can supply whatever background image you like.</p>
 </div>
 <div class="dash_bottom">
     <div class="dash_content">
@@ -41,12 +38,4 @@
 					<button class='btn'>Add Update</button>
 				</form>
 			<?php endif;?>
-        <hr />
-        <h3>Hospitality</h3>
-        <div class="dash_hosp">
-            <img src="<?=SITE_ROOT?>img/dash_model.jpg" />
-            <p>There’s nothing like sharing the exhilaration of the most anticipated concert of the year with your partners, associates friends and fans. Together, in an exclusive BlackBerry hospitality area– your guests will gather before legendary performer Alicia Keys takes center stage to enjoy drinks, appetizers and great conversation.</p>
-            <p>This exclusive priority access offer can turn this concert to remember into a night you and your guests will never forget.</p>
-            <p>To order your hospitality package please go to: <a href="http://BlackBerryPresentsAliciaKeys.com">http://BlackBerryPresentsAliciaKeys.com</a></p>
-    </div>
 </div>

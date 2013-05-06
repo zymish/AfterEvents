@@ -1,22 +1,21 @@
 body {
-    background: #091d25 !important;
+    background:#091d25 !important;
 }
 #content-header {
-    margin-top: 0;
+    margin-top:0;
 }
 #header {
     background:black;
-    border-bottom: none;
-    box-shadow: none;
-    height: 110px;
-    margin-bottom: -10px;
+    border-bottom:none;
+    box-shadow:none;
+    margin-bottom:-10px;
 }
 #header h1 {
-    background: url("../img/bblogo.png") no-repeat 0 0 transparent;
-    left: 0;
-    top: 0;
-    height: 82px;
-    width: 207px;
+    background:black;
+    left:0;
+    top:0;
+    height:82px;
+    width:207px;
 }
 #sidebar {
     border-bottom: none;
@@ -248,14 +247,16 @@ li.hospitality_first {
 
 .dash_head {
     display: block;
-    background: url("../img/dash_ak.jpg") no-repeat black;
+    background: url("../img/business1.jpg") no-repeat white;
     height: 491px;
     border-bottom: 1px solid #240410;
 }
 .dash_head p {
-    padding: 180px 0 0 150px;
+	background:black;
+	opacity: 0.5;
+    padding: 50px 100px;
     width: 330px;
-    color: #ffffff;
+    color: white;
     font-size: 15px;
     letter-spacing: 1px;
 }

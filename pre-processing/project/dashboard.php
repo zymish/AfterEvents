@@ -19,6 +19,4 @@ $result = $db->query($sql);
 if($result) 
 while($event = $result->fetch_assoc()) $events[] = $event;
 
-$site['pageTitle'] = 'BlackBerry Presents: Alicia Keys';
-$site['js'][] = 'highcharts.js';
-$site['js'][] = 'highcharts.theme.js';
+$site['pageTitle'] = 'Project Dashboard';
